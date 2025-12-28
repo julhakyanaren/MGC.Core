@@ -8,11 +8,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.Drawing.Common" Version="8.0.6" />
+	  <Compile Remove="UnitsConverter\**" />
+	  <EmbeddedResource Remove="UnitsConverter\**" />
+	  <None Remove="UnitsConverter\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="UnitsConverter\" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.6" />
 	</ItemGroup>
 
 </Project>
