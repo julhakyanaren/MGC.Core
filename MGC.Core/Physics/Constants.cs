@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MGC.Core.Physics
+namespace MGC.Physics
 {
     public static class Constants
     {
