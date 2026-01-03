@@ -17,7 +17,7 @@ namespace MGC.Physics
         public static readonly double GasConstant = Avogadro * Boltzmann;
 
         public const double GravitationalConstant = 6.67430e-11;
-        public const double StandartGravity = 9.80665;
+        public const double StandardGravity = 9.80665;
 
         public const double VacuumPermittivity = 8.8541878128e-12;
         public const double VacuumPermeability = 1.25663706212e-6;

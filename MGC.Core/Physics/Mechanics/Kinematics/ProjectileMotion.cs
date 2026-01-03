@@ -54,7 +54,7 @@
         public static double TimeOfFlight(double initialVelocity, double angleRadians)
         {
             return 2.0 * VerticalVelocity(initialVelocity, angleRadians)
-                   / Constants.StandartGravity;
+                   / Constants.StandardGravity;
         }
 
         /// <summary>
@@ -68,7 +68,7 @@
         {
             return (System.Math.Pow(initialVelocity, 2)
                 * System.Math.Pow(System.Math.Sin(angleRadians), 2))
-                / (2.0 * Constants.StandartGravity);
+                / (2.0 * Constants.StandardGravity);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@
         {
             return (System.Math.Pow(initialVelocity, 2)
                 * System.Math.Sin(2.0 * angleRadians))
-                / Constants.StandartGravity;
+                / Constants.StandardGravity;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@
         {
             return startY
                 + initialVelocity * System.Math.Sin(angleRadians) * time
-                - (Constants.StandartGravity * System.Math.Pow(time, 2) / 2.0);
+                - (Constants.StandardGravity * System.Math.Pow(time, 2) / 2.0);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@
 
             return startY
                 + coordX * System.Math.Tan(angleRadians)
-                - (Constants.StandartGravity * System.Math.Pow(coordX, 2))
+                - (Constants.StandardGravity * System.Math.Pow(coordX, 2))
                   / (2.0 * System.Math.Pow(initialVelocity, 2)
                   * System.Math.Pow(System.Math.Cos(angleRadians), 2));
         }
@@ -147,7 +147,7 @@
         public static double TimeToMaxHeight(double initialVelocity, double angleRadians)
         {
             return initialVelocity * System.Math.Sin(angleRadians)
-                   / Constants.StandartGravity;
+                   / Constants.StandardGravity;
         }
     }
 }
