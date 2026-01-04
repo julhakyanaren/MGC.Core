@@ -1,5 +1,6 @@
 ﻿namespace MGC.Mathematics
 {
+    using Physics.Thermodynamics;
     public static class Roots
     {
         /// <summary>

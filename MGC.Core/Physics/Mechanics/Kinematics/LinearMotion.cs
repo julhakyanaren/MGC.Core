@@ -32,7 +32,7 @@
     /// </item>
     /// <item>
     /// <description>
-    /// <see cref="FreeFallDistance(double, double)"/> uses <see cref="Constants.StandardGravity"/> as the constant
+    /// <see cref="FreeFallDistance(double, double)"/> uses <see cref="PhysicConstants.StandardGravity"/> as the constant
     /// gravitational acceleration g. The caller defines the axis orientation (sign convention).
     /// </description>
     /// </item>
@@ -98,11 +98,11 @@
         /// <param name="v0">Initial velocity along the axis (m/s). Default is 0.</param>
         /// <returns>Displacement (m): s = v0 * t + (g * t²) / 2.</returns>
         /// <remarks>
-        /// Uses <see cref="Constants.StandardGravity"/> as g (m/s²). Sign and axis direction are defined by the caller.
+        /// Uses <see cref="PhysicConstants.StandardGravity"/> as g (m/s²). Sign and axis direction are defined by the caller.
         /// </remarks>
         public static double FreeFallDistance(double time, double v0 = 0)
         {
-            return v0 * time + Constants.StandardGravity * Math.Pow(time, 2) / 2.0;
+            return v0 * time + PhysicConstants.StandardGravity * Math.Pow(time, 2) / 2.0;
         }
 
         /// <summary>

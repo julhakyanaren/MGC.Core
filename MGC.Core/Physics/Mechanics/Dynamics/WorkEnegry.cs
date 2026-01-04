@@ -46,7 +46,7 @@
         public static double WorkOfGravityFromHeightChange(
             double mass,
             double deltaHeight,
-            double g = Constants.StandardGravity)
+            double g = PhysicConstants.StandardGravity)
         {
             if (mass < 0)
             {
@@ -143,7 +143,7 @@
             double mu,
             double mass,
             double distance,
-            double g = Constants.StandardGravity)
+            double g = PhysicConstants.StandardGravity)
         {
             if (mu < 0)
             {
@@ -217,7 +217,7 @@
         public static double WorkOfKineticFrictionIncline(
             double mu, double mass, double distance, 
             double inclineAngleRadians,
-            double g = Constants.StandardGravity)
+            double g = PhysicConstants.StandardGravity)
         {
             if (mu < 0)
             {

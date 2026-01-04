@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MGC.Physics
 {
-    public static class Constants
+    public static class PhysicConstants
     {
         public const double SpeedOfLight = 299792458.0;
         public const double Planck = 6.62607015e-34;
@@ -27,5 +27,6 @@ namespace MGC.Physics
 
         public const double StandardAtmosphere = 101325.0;
         public const double Bar = 100000.0f;
+        public const double MillimeterOfMercury = 133.322387415;
     }
 }

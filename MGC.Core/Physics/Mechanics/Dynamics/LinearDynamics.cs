@@ -133,7 +133,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity;
+            return mass * PhysicConstants.StandardGravity;
         }
         /// <summary>
         /// Calculates normal force on a horizontal surface: N = m * g.
@@ -148,7 +148,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity;
+            return mass * PhysicConstants.StandardGravity;
         }
         /// <summary>
         /// Calculates normal force on an incline: N = m * g * cos(angle).
@@ -164,7 +164,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity * Math.Cos(angleRadians);
+            return mass * PhysicConstants.StandardGravity * Math.Cos(angleRadians);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity * Math.Sin(angleRadians);
+            return mass * PhysicConstants.StandardGravity * Math.Sin(angleRadians);
         }
         /// <summary>
         /// Calculates the component of gravity perpendicular to an incline: F = m * g * cos(angle).
@@ -226,7 +226,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity * Math.Cos(angleRadians);
+            return mass * PhysicConstants.StandardGravity * Math.Cos(angleRadians);
         }
 
         /// <summary>
@@ -626,7 +626,7 @@
             {
                 throw new ArgumentException("Kinetic friction coefficient must be non-negative.", nameof(kineticFrictionCoeff));
             }
-            return Constants.StandardGravity * (Math.Sin(angleRadians) - kineticFrictionCoeff * Math.Cos(angleRadians));
+            return PhysicConstants.StandardGravity * (Math.Sin(angleRadians) - kineticFrictionCoeff * Math.Cos(angleRadians));
         }
         /// <summary>
         /// Calculates acceleration along an incline from an external force parallel to the surface,
@@ -648,7 +648,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return (forceParallel - kineticFrictionCoeff * mass * Constants.StandardGravity * Math.Cos(angleRadians)) / mass;
+            return (forceParallel - kineticFrictionCoeff * mass * PhysicConstants.StandardGravity * Math.Cos(angleRadians)) / mass;
         }
         /// <summary>
         /// Calculates acceleration along an incline including gravity and kinetic friction:
@@ -670,9 +670,9 @@
             {
                 throw new ArgumentException("Kinetic friction coefficient must be non-negative.", nameof(kineticFrictionCoeff));
             }
-            double n = mass * Constants.StandardGravity * Math.Cos(angleRadians);
+            double n = mass * PhysicConstants.StandardGravity * Math.Cos(angleRadians);
             double friction = kineticFrictionCoeff * n;
-            double gravityParallel = mass * Constants.StandardGravity * Math.Sin(angleRadians);
+            double gravityParallel = mass * PhysicConstants.StandardGravity * Math.Sin(angleRadians);
 
             return (forceParallel + gravityParallel - friction) / mass;
         }

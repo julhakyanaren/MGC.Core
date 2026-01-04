@@ -135,7 +135,7 @@ namespace MGC.Physics.Mechanics.Dynamics
             {
                 throw new ArgumentException("Radius must be greater then zero.", nameof(radius));
             }
-            return Math.Sqrt(Constants.StandardGravity * radius);
+            return Math.Sqrt(PhysicConstants.StandardGravity * radius);
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace MGC.Physics.Mechanics.Dynamics
             {
                 throw new ArgumentException("Radius must be greater then zero.", nameof(radius));
             }
-            return Math.Atan(linearVelocity * linearVelocity / (radius * Constants.StandardGravity));
+            return Math.Atan(linearVelocity * linearVelocity / (radius * PhysicConstants.StandardGravity));
         }
 
         /// <summary>
