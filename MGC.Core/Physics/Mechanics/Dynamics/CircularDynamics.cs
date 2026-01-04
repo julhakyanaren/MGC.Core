@@ -135,7 +135,7 @@ namespace MGC.Physics.Mechanics.Dynamics
             {
                 throw new ArgumentException("Radius must be greater then zero.", nameof(radius));
             }
-            return System.Math.Sqrt(Constants.StandardGravity * radius);
+            return Math.Sqrt(Constants.StandardGravity * radius);
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace MGC.Physics.Mechanics.Dynamics
             {
                 throw new ArgumentException("Radius must be greater then zero.", nameof(radius));
             }
-            return System.Math.Atan(linearVelocity * linearVelocity / (radius * Constants.StandardGravity));
+            return Math.Atan(linearVelocity * linearVelocity / (radius * Constants.StandardGravity));
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace MGC.Physics.Mechanics.Dynamics
                 centerZ - posZ
             };
 
-            double length = System.Math.Sqrt(
+            double length = Math.Sqrt(
                 vector[0] * vector[0] +
                 vector[1] * vector[1] +
                 vector[2] * vector[2]);
@@ -247,7 +247,7 @@ namespace MGC.Physics.Mechanics.Dynamics
             double dy = centerY - posY;
             double dz = centerZ - posZ;
 
-            double radius = System.Math.Sqrt(dx * dx + dy * dy + dz * dz);
+            double radius = Math.Sqrt(dx * dx + dy * dy + dz * dz);
 
             if (radius == 0)
             {

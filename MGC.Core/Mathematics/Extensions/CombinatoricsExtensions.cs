@@ -1,4 +1,6 @@
-﻿namespace MGC.Math
+﻿using MGC.Mathematics;
+
+namespace MGC.Core.Math.Extensions
 {
     public static class CombinatoricsExtensions
     {

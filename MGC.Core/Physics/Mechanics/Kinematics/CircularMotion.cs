@@ -27,12 +27,12 @@ namespace MGC.Physics.Mechanics.Kinematics
         /// <summary>
         /// Converts degrees to radians.
         /// </summary>
-        private static double DegToRad(double degrees) => degrees * System.Math.PI / 180.0;
+        private static double DegToRad(double degrees) => degrees * Math.PI / 180.0;
 
         /// <summary>
         /// Converts radians to degrees.
         /// </summary>
-        private static double RadToDeg(double radians) => radians * 180.0 / System.Math.PI;
+        private static double RadToDeg(double radians) => radians * 180.0 / Math.PI;
 
         /// <summary>
         /// Computes the arc length for circular motion.
@@ -82,7 +82,7 @@ namespace MGC.Physics.Mechanics.Kinematics
         /// <returns>Angular displacement (rad): φ = ω₀t + ½αt².</returns>
         public static double AngularDisplacement(double initialAngularVelocity, double angularAcceleration, double time)
         {
-            return initialAngularVelocity * time + angularAcceleration * System.Math.Pow(time, 2) / 2.0;
+            return initialAngularVelocity * time + angularAcceleration * Math.Pow(time, 2) / 2.0;
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Radius must be non-zero.", nameof(radius));
             }
-            return System.Math.Pow(linearVelocity, 2) / radius;
+            return Math.Pow(linearVelocity, 2) / radius;
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Radius must be non-zero.", nameof(radius));
             }
-            return System.Math.Pow(angularVelocity, 2) * radius;
+            return Math.Pow(angularVelocity, 2) * radius;
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace MGC.Physics.Mechanics.Kinematics
         /// <returns>Total acceleration magnitude (m/s²).</returns>
         public static double TotalAcceleration(double tangentialAcceleration, double centripetalAcceleration)
         {
-            return System.Math.Sqrt(System.Math.Pow(tangentialAcceleration, 2) + System.Math.Pow(centripetalAcceleration, 2));
+            return Math.Sqrt(Math.Pow(tangentialAcceleration, 2) + Math.Pow(centripetalAcceleration, 2));
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Angular velocity must be non-zero.", nameof(angularVelocity));
             }
-            return 2.0 * System.Math.PI / System.Math.Abs(angularVelocity);
+            return 2.0 * Math.PI / Math.Abs(angularVelocity);
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Frequency must be non-zero.", nameof(frequency));
             }
-            return 1.0 / System.Math.Abs(frequency);
+            return 1.0 / Math.Abs(frequency);
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Period must be non-zero.", nameof(period));
             }
-            return 1.0 / System.Math.Abs(period);
+            return 1.0 / Math.Abs(period);
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Angular velocity must be non-zero.", nameof(angularVelocity));
             }
-            return System.Math.Abs(angularVelocity) / (2.0 * System.Math.PI);
+            return Math.Abs(angularVelocity) / (2.0 * Math.PI);
         }
 
         /// <summary>
@@ -324,7 +324,7 @@ namespace MGC.Physics.Mechanics.Kinematics
         /// </remarks>
         public static double FinalAngularSpeedFromDisplacement(double omega0, double angularAcceleration, double angularDisplacement)
         {
-            double value = System.Math.Pow(omega0, 2) + 2.0 * angularAcceleration * angularDisplacement;
+            double value = Math.Pow(omega0, 2) + 2.0 * angularAcceleration * angularDisplacement;
 
             if (value < 0)
             {
@@ -334,7 +334,7 @@ namespace MGC.Physics.Mechanics.Kinematics
                     "No real angular motion exists for the given parameters (negative value under square root)."
                 );
             }
-            return System.Math.Sqrt(value);
+            return Math.Sqrt(value);
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace MGC.Physics.Mechanics.Kinematics
             {
                 throw new ArgumentException("Angular acceleration must be non-zero.", nameof(angularAcceleration));
             }
-            return (System.Math.Pow(omega, 2) - System.Math.Pow(omega0, 2)) / (2.0 * angularAcceleration);
+            return (Math.Pow(omega, 2) - Math.Pow(omega0, 2)) / (2.0 * angularAcceleration);
         }
     }
 }

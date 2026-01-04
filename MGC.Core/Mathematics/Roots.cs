@@ -1,4 +1,4 @@
-﻿namespace MGC.Math
+﻿namespace MGC.Mathematics
 {
     public static class Roots
     {
@@ -27,15 +27,15 @@
                     throw new ArgumentException("For negative radicand, the root degree must be an integer.", nameof(n));
                 }
 
-                int k = (int)System.Math.Round(n);
+                int k = (int)Math.Round(n);
                 if (NumberSets.IsEven(k))
                 {
                     throw new ArgumentException("There is no real solution for even-degree roots of negative numbers.", nameof(x));
                 }
-                double absRoot = System.Math.Pow(-x, 1.0 / k);
+                double absRoot = Math.Pow(-x, 1.0 / k);
                 return -absRoot;
             }
-            return System.Math.Pow(x, 1.0 / n);
+            return Math.Pow(x, 1.0 / n);
         }
 
         /// <summary>
@@ -69,9 +69,9 @@
                 {
                     return double.NaN;
                 }
-                return -System.Math.Pow(-x, 1.0 / n);
+                return -Math.Pow(-x, 1.0 / n);
             }
-            return System.Math.Pow(x, 1.0 / n);
+            return Math.Pow(x, 1.0 / n);
         }
 
         /// <summary>
@@ -142,7 +142,7 @@
             double y = absX >= 1.0 ? absX : 1.0;
             for (int i = 0; i < maxIterations; i++)
             {
-                double yPow = System.Math.Pow(y, n - 1);
+                double yPow = Math.Pow(y, n - 1);
                 if (yPow == 0.0)
                 {
                     y = 0.0;
@@ -150,7 +150,7 @@
                 }
                 double yNext = ((n - 1) * y + absX / yPow) / n;
 
-                if (System.Math.Abs(yNext - y) <= tolerance)
+                if (Math.Abs(yNext - y) <= tolerance)
                 {
                     y = yNext;
                     break;
@@ -249,7 +249,7 @@
 
             for (int i = 0; i < maxIterations; i++)
             {
-                double yPow = System.Math.Pow(y, n - 1);
+                double yPow = Math.Pow(y, n - 1);
                 if (yPow == 0.0)
                 {
                     y = 0.0;
@@ -257,7 +257,7 @@
                 }
                 double yNext = ((n - 1) * y + absX / yPow) / n;
 
-                if (System.Math.Abs(yNext - y) <= tolerance)
+                if (Math.Abs(yNext - y) <= tolerance)
                 {
                     y = yNext;
                     break;

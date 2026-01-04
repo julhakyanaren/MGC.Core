@@ -74,9 +74,9 @@ namespace MGC.Physics.Mechanics.Statics
         {
             ValidateNonNegative(radius, nameof(radius), "Radius must be non-negative.");
 
-            double arm = radius * System.Math.Sin(angleRadians);
+            double arm = radius * Math.Sin(angleRadians);
 
-            return System.Math.Abs(arm);
+            return Math.Abs(arm);
         }
         /// <summary>
         /// Calculates the signed (algebraic) lever arm.
@@ -94,7 +94,7 @@ namespace MGC.Physics.Mechanics.Statics
         {
             ValidateNonNegative(radius, nameof(radius), "Radius must be non-negative.");
 
-            return radius * System.Math.Sin(angleRadians);
+            return radius * Math.Sin(angleRadians);
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace MGC.Physics.Mechanics.Statics
 
             double diff = (force1 * leverArm1) - (force2 * leverArm2);
 
-            return System.Math.Abs(diff) <= tolerance;
+            return Math.Abs(diff) <= tolerance;
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace MGC.Physics.Mechanics.Statics
                 sum += torques[i];
             }
 
-            return System.Math.Abs(sum) <= tolerance;
+            return Math.Abs(sum) <= tolerance;
         }
 
         /// <summary>

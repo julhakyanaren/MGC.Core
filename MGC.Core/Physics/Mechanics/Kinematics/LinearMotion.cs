@@ -88,7 +88,7 @@
         /// <returns>Displacement (m): s = v0 * t + (a * t²) / 2.</returns>
         public static double Displacement(double v0, double acceleration, double time)
         {
-            return v0 * time + acceleration * System.Math.Pow(time, 2) / 2.0;
+            return v0 * time + acceleration * Math.Pow(time, 2) / 2.0;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@
         /// </remarks>
         public static double FreeFallDistance(double time, double v0 = 0)
         {
-            return v0 * time + Constants.StandardGravity * System.Math.Pow(time, 2) / 2.0;
+            return v0 * time + Constants.StandardGravity * Math.Pow(time, 2) / 2.0;
         }
 
         /// <summary>
@@ -172,12 +172,12 @@
         /// </remarks>
         public static double FinalSpeedFromDisplacement(double initialVelocity, double acceleration, double displacement)
         {
-            double value = System.Math.Pow(initialVelocity, 2) + 2.0 * acceleration * displacement;
+            double value = Math.Pow(initialVelocity, 2) + 2.0 * acceleration * displacement;
             if (value < 0)
             {
                 throw new ArgumentException("Expression under square root is negative. Check acceleration and displacement.", nameof(displacement));
             }
-            return System.Math.Sqrt(value);
+            return Math.Sqrt(value);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@
             {
                 throw new ArgumentException("Acceleration must be non-zero.", nameof(acceleration));
             }
-            return (System.Math.Pow(finalVelocity, 2) - System.Math.Pow(initialVelocity, 2)) / (2.0 * acceleration);
+            return (Math.Pow(finalVelocity, 2) - Math.Pow(initialVelocity, 2)) / (2.0 * acceleration);
         }
 
         /// <summary>
@@ -219,7 +219,7 @@
         /// <returns>Position (m): x = x0 + v0 * t + (a * t²) / 2.</returns>
         public static double Position(double x0, double initialVelocity, double acceleration, double time)
         {
-            return x0 + initialVelocity * time + 0.5 * acceleration * System.Math.Pow(time, 2);
+            return x0 + initialVelocity * time + 0.5 * acceleration * Math.Pow(time, 2);
         }
 
         /// <summary>
@@ -237,7 +237,7 @@
             {
                 throw new ArgumentException("Time must be non-zero.", nameof(time));
             }
-            return (x - x0 - (acceleration * System.Math.Pow(time, 2)) / 2.0) / time;
+            return (x - x0 - (acceleration * Math.Pow(time, 2)) / 2.0) / time;
         }
 
         /// <summary>

@@ -10,7 +10,7 @@ namespace MGC.Physics
     {
         public const double SpeedOfLight = 299792458.0;
         public const double Planck = 6.62607015e-34;
-        public static readonly double ReducedPlanck = Planck / (System.Math.PI * 2.0);
+        public static readonly double ReducedPlanck = Planck / (Math.PI * 2.0);
         public const double ElementaryCharge = 1.602176634e-19;
         public const double Boltzmann = 1.380649e-23;
         public const double Avogadro = 6.02214076e23;
@@ -21,7 +21,7 @@ namespace MGC.Physics
 
         public const double VacuumPermittivity = 8.8541878128e-12;
         public const double VacuumPermeability = 1.25663706212e-6;
-        public static readonly double CoulombConstant = 1.0 / (4.0 * System.Math.PI * VacuumPermittivity);
+        public static readonly double CoulombConstant = 1.0 / (4.0 * Math.PI * VacuumPermittivity);
 
         public const double StefanBoltzmann = 5.670374419e-8;
 

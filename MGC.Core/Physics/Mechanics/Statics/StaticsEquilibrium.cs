@@ -89,7 +89,7 @@
                 netForce += forces[f];
             }
 
-            return System.Math.Abs(netForce) <= tolerance;
+            return Math.Abs(netForce) <= tolerance;
         }
         /// <summary>
         /// Checks whether a set of forces is in translational equilibrium in two dimensions.
@@ -137,8 +137,8 @@
             }
 
             return
-                System.Math.Abs(netForceX) <= tolerance &&
-                System.Math.Abs(netForceY) <= tolerance;
+                Math.Abs(netForceX) <= tolerance &&
+                Math.Abs(netForceY) <= tolerance;
         }
         /// <summary>
         /// Checks whether a set of forces is in translational equilibrium in three dimensions.
@@ -189,9 +189,9 @@
             }
 
             return
-                System.Math.Abs(netForceX) <= tolerance &&
-                System.Math.Abs(netForceY) <= tolerance &&
-                System.Math.Abs(netForceZ) <= tolerance;
+                Math.Abs(netForceX) <= tolerance &&
+                Math.Abs(netForceY) <= tolerance &&
+                Math.Abs(netForceZ) <= tolerance;
         }
 
         /// <summary>
@@ -236,7 +236,7 @@
                 netTorque += torques[t];
             }
 
-            return System.Math.Abs(netTorque) <= tolerance;
+            return Math.Abs(netTorque) <= tolerance;
         }
 
         /// <summary>

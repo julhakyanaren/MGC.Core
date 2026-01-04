@@ -113,7 +113,7 @@
             ValidateNormalForceNonNegative(normalForce);
             ValidateMuStatic(muStatic);
 
-            return System.Math.Abs(appliedTangentialForce) > normalForce * muStatic;
+            return Math.Abs(appliedTangentialForce) > normalForce * muStatic;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@
         {
             ValidateNormalForcePositive(normalForce);
 
-            return System.Math.Abs(appliedTangentialForce / normalForce);
+            return Math.Abs(appliedTangentialForce / normalForce);
         }
 
         /// <summary>
@@ -178,10 +178,10 @@
             ValidateMuStatic(muStatic);
 
             double maxFriction = normalForce * muStatic;
-            double requiredMagnitude = System.Math.Abs(appliedTangentialForce);
-            double actualMagnitude = System.Math.Min(requiredMagnitude, maxFriction);
+            double requiredMagnitude = Math.Abs(appliedTangentialForce);
+            double actualMagnitude = Math.Min(requiredMagnitude, maxFriction);
 
-            double sign = System.Math.Sign(appliedTangentialForce);
+            double sign = Math.Sign(appliedTangentialForce);
             return -sign * actualMagnitude;
         }
 
@@ -209,7 +209,7 @@
             ValidateNormalForceNonNegative(normalForce);
             ValidateMuStatic(muStatic);
 
-            return System.Math.Abs(appliedTangentialForce) <= muStatic * normalForce;
+            return Math.Abs(appliedTangentialForce) <= muStatic * normalForce;
         }
     }
 }

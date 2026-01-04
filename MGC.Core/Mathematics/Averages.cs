@@ -1,4 +1,4 @@
-﻿namespace MGC.Math
+﻿namespace MGC.Mathematics
 {
     /// <summary>
     /// Provides a collection of statistical average calculation methods,
@@ -127,9 +127,9 @@
                 {
                     throw new ArgumentException("All values must be > 0 for geometric mean.", nameof(values));
                 }
-                logSum += System.Math.Log(x);
+                logSum += Math.Log(x);
             }
-            return System.Math.Exp(logSum / values.Count);
+            return Math.Exp(logSum / values.Count);
         }
 
         /// <summary>
@@ -224,7 +224,7 @@
                 double x = Convert.ToDouble(values[i]);
                 sumSquares += x * x;
             }
-            return System.Math.Sqrt(sumSquares / values.Count);
+            return Math.Sqrt(sumSquares / values.Count);
         }
 
         /// <summary>

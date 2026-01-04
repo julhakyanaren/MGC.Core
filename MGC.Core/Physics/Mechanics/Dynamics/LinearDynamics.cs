@@ -164,7 +164,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity * System.Math.Cos(angleRadians);
+            return mass * Constants.StandardGravity * Math.Cos(angleRadians);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity * System.Math.Sin(angleRadians);
+            return mass * Constants.StandardGravity * Math.Sin(angleRadians);
         }
         /// <summary>
         /// Calculates the component of gravity perpendicular to an incline: F = m * g * cos(angle).
@@ -226,7 +226,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return mass * Constants.StandardGravity * System.Math.Cos(angleRadians);
+            return mass * Constants.StandardGravity * Math.Cos(angleRadians);
         }
 
         /// <summary>
@@ -292,11 +292,11 @@
                 double f = magnitudes[i];
                 double a = anglesRadians[i];
 
-                forceX += f * System.Math.Cos(a);
-                forceY += f * System.Math.Sin(a);
+                forceX += f * Math.Cos(a);
+                forceY += f * Math.Sin(a);
             }
 
-            return System.Math.Sqrt(forceX * forceX + forceY * forceY);
+            return Math.Sqrt(forceX * forceX + forceY * forceY);
         }
         /// <summary>
         /// Calculates the magnitude of the net force in 3D from force components.
@@ -307,7 +307,7 @@
         public static double NetForce3D((double x, double y, double z)[] forces)
         {
             var (fx, fy, fz) = NetForce3DComponents(forces);
-            return System.Math.Sqrt(fx * fx + fy * fy + fz * fz);
+            return Math.Sqrt(fx * fx + fy * fy + fz * fz);
         }
 
         /// <summary>
@@ -342,8 +342,8 @@
                 double f = magnitudes[i];
                 double a = anglesRadians[i];
 
-                forceX += f * System.Math.Cos(a);
-                forceY += f * System.Math.Sin(a);
+                forceX += f * Math.Cos(a);
+                forceY += f * Math.Sin(a);
             }
 
             return (forceX, forceY);
@@ -578,7 +578,7 @@
                 throw new ArgumentException("Drag coefficient k must be non-negative.", nameof(k));
             }
 
-            return -k * velocity * System.Math.Abs(velocity);
+            return -k * velocity * Math.Abs(velocity);
         }
         /// <summary>
         /// Calculates 3D quadratic drag force components: Fd = -k * |v| * v.
@@ -594,7 +594,7 @@
                 throw new ArgumentException("Drag coefficient k must be non-negative.", nameof(k));
             }
 
-            double speed = System.Math.Sqrt(
+            double speed = Math.Sqrt(
                 velocity.x * velocity.x +
                 velocity.y * velocity.y +
                 velocity.z * velocity.z);
@@ -626,7 +626,7 @@
             {
                 throw new ArgumentException("Kinetic friction coefficient must be non-negative.", nameof(kineticFrictionCoeff));
             }
-            return Constants.StandardGravity * (System.Math.Sin(angleRadians) - kineticFrictionCoeff * System.Math.Cos(angleRadians));
+            return Constants.StandardGravity * (Math.Sin(angleRadians) - kineticFrictionCoeff * Math.Cos(angleRadians));
         }
         /// <summary>
         /// Calculates acceleration along an incline from an external force parallel to the surface,
@@ -648,7 +648,7 @@
             {
                 throw new ArgumentException("Mass must be greater than zero.", nameof(mass));
             }
-            return (forceParallel - kineticFrictionCoeff * mass * Constants.StandardGravity * System.Math.Cos(angleRadians)) / mass;
+            return (forceParallel - kineticFrictionCoeff * mass * Constants.StandardGravity * Math.Cos(angleRadians)) / mass;
         }
         /// <summary>
         /// Calculates acceleration along an incline including gravity and kinetic friction:
@@ -670,9 +670,9 @@
             {
                 throw new ArgumentException("Kinetic friction coefficient must be non-negative.", nameof(kineticFrictionCoeff));
             }
-            double n = mass * Constants.StandardGravity * System.Math.Cos(angleRadians);
+            double n = mass * Constants.StandardGravity * Math.Cos(angleRadians);
             double friction = kineticFrictionCoeff * n;
-            double gravityParallel = mass * Constants.StandardGravity * System.Math.Sin(angleRadians);
+            double gravityParallel = mass * Constants.StandardGravity * Math.Sin(angleRadians);
 
             return (forceParallel + gravityParallel - friction) / mass;
         }
@@ -691,7 +691,7 @@
             {
                 throw new ArgumentException("Static friction coefficient must be non-negative.", nameof(staticFrictionCoeff));
             }
-            return System.Math.Tan(angleRadians) > staticFrictionCoeff;
+            return Math.Tan(angleRadians) > staticFrictionCoeff;
         }
     }
 }

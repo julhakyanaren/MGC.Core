@@ -1,4 +1,4 @@
-﻿namespace MGC.Math
+﻿namespace MGC.Mathematics
 {
     /// <summary>
     /// Provides a collection of statistical utility methods for analyzing
@@ -252,22 +252,22 @@
         /// Calculates the population standard deviation of the numeric values in the array.
         /// This is the square root of the population variance.
         /// </summary>
-        public static double StdDevPopulation<T>(T[] values) => System.Math.Sqrt(VariancePopulation(values));
+        public static double StdDevPopulation<T>(T[] values) => Math.Sqrt(VariancePopulation(values));
         /// <summary>
         /// Calculates the population standard deviation of the numeric values in the list.
         /// This is the square root of the population variance.
         /// </summary>
-        public static double StdDevPopulation<T>(List<T> values) => System.Math.Sqrt(VariancePopulation(values));
+        public static double StdDevPopulation<T>(List<T> values) => Math.Sqrt(VariancePopulation(values));
 
         /// <summary>
         /// Calculates the sample standard deviation of the numeric values in the array.
         /// This is the square root of the sample variance.
         /// </summary>
-        public static double StdDevSample<T>(T[] values) => System.Math.Sqrt(VarianceSample(values));
+        public static double StdDevSample<T>(T[] values) => Math.Sqrt(VarianceSample(values));
         /// <summary>
         /// Calculates the sample standard deviation of the numeric values in the list.
         /// This is the square root of the sample variance.
         /// </summary>
-        public static double StdDevSample<T>(List<T> values) => System.Math.Sqrt(VarianceSample(values));
+        public static double StdDevSample<T>(List<T> values) => Math.Sqrt(VarianceSample(values));
     }
 }

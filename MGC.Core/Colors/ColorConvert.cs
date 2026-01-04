@@ -1,4 +1,4 @@
-﻿using MGC.Math;
+﻿using MGC.Mathematics;
 namespace MGC.Colors
 {
     /// <summary>
@@ -214,7 +214,7 @@ namespace MGC.Colors
                     }
             }
             double c = value * saturation;
-            double x = c * (1.0 - System.Math.Abs((hue / 60.0) % 2.0 - 1.0));
+            double x = c * (1.0 - Math.Abs((hue / 60.0) % 2.0 - 1.0));
             double m = value - c;
 
             double r1 = 0.0f;
@@ -266,9 +266,9 @@ namespace MGC.Colors
                         break;
                     }
             }
-            byte r = (byte)System.Math.Round((r1 + m) * 255.0);
-            byte g = (byte)System.Math.Round((g1 + m) * 255.0);
-            byte b = (byte)System.Math.Round((b1 + m) * 255.0);
+            byte r = (byte)Math.Round((r1 + m) * 255.0);
+            byte g = (byte)Math.Round((g1 + m) * 255.0);
+            byte b = (byte)Math.Round((b1 + m) * 255.0);
             if (r > 255)
             {
                 r = 255;
@@ -292,7 +292,7 @@ namespace MGC.Colors
                     alpha = 1.0; ;
                 }
 
-                byte a = (byte)System.Math.Round(alpha * 255.0);
+                byte a = (byte)Math.Round(alpha * 255.0);
                 if (a > 255)
                 {
                     a = 255;
@@ -373,7 +373,7 @@ namespace MGC.Colors
             double l = lightness;
             double sl = saturationL;
 
-            double v = l + sl * System.Math.Min(l, 1 - l);
+            double v = l + sl * Math.Min(l, 1 - l);
 
             double sv;
             if (v == 0)
@@ -414,7 +414,7 @@ namespace MGC.Colors
             }
             else
             {
-                sl = (v - l) / System.Math.Min(l, 1 - l);
+                sl = (v - l) / Math.Min(l, 1 - l);
             }
             saturationL = sl;
             lightness = l;

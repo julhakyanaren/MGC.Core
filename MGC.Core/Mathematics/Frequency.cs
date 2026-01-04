@@ -1,4 +1,4 @@
-﻿namespace MGC.Math
+﻿namespace MGC.Mathematics
 {
     /// <summary>
     /// Provides methods for analyzing frequency-related characteristics
@@ -252,8 +252,8 @@
 
             double prob = percent / 100.0;
             double index = prob * (n - 1);
-            int lower = (int)System.Math.Floor(index);
-            int upper = (int)System.Math.Ceiling(index);
+            int lower = (int)Math.Floor(index);
+            int upper = (int)Math.Ceiling(index);
 
             if (lower == upper)
             {

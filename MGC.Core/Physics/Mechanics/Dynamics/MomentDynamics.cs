@@ -306,7 +306,7 @@ namespace MGC.Physics.Mechanics.Dynamics
         {
             ValidateRadiusNonNegative(radius);
 
-            double arm = System.Math.Abs(radius * System.Math.Sin(angleRadians));
+            double arm = Math.Abs(radius * Math.Sin(angleRadians));
 
             return linearMoment * arm;
         }
@@ -343,7 +343,7 @@ namespace MGC.Physics.Mechanics.Dynamics
         {
             ValidateRadiusNonNegative(radius);
 
-            return linearMoment * (radius * System.Math.Sin(angleRadians));
+            return linearMoment * (radius * Math.Sin(angleRadians));
         }
         /// <summary>
         /// Calculates the signed angular Moment using mass and speed.

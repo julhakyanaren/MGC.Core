@@ -1,4 +1,4 @@
-﻿namespace MGC.Math
+﻿namespace MGC.Mathematics
 {
     /// <summary>
     /// Provides helper methods for determining the membership of numeric values
@@ -26,7 +26,7 @@
                 return false;
             }
 
-            return System.Math.Abs(x - System.Math.Round(x)) <= eps;
+            return Math.Abs(x - Math.Round(x)) <= eps;
         }
         /// <summary>
         /// Determines whether a floating-point value is a natural number.
@@ -74,7 +74,7 @@
         /// </returns>
         public static bool IsEven(int number)
         {
-            return System.Math.Abs(number) % 2 == 0;
+            return Math.Abs(number) % 2 == 0;
         }
         /// <summary>
         /// Determines whether an integer number is odd.
@@ -85,7 +85,7 @@
         /// </returns>
         public static bool IsOdd(int n)
         {
-            return System.Math.Abs(n) % 2 != 0;
+            return Math.Abs(n) % 2 != 0;
         }
 
         public static bool IsBetween<T>(T value, T a, T b) where T : IComparable<T>

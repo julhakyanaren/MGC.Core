@@ -248,7 +248,7 @@
             }
 
             double normalForce =
-                mass * g * System.Math.Cos(inclineAngleRadians);
+                mass * g * Math.Cos(inclineAngleRadians);
 
             return -(mu * normalForce) * distance;
         }

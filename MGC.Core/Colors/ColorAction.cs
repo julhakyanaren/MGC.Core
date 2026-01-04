@@ -157,11 +157,11 @@
                 mixG += colors[c].G;
                 mixB += colors[c].B;
             }
-            mixR = System.Math.Clamp(mixR, 0, 255);
-            mixG = System.Math.Clamp(mixG, 0, 255);
-            mixB = System.Math.Clamp(mixB, 0, 255);
+            mixR = Math.Clamp(mixR, 0, 255);
+            mixG = Math.Clamp(mixG, 0, 255);
+            mixB = Math.Clamp(mixB, 0, 255);
 
-            return Color.FromArgb(System.Math.Clamp(Convert.ToInt32(alpha * 255), 0, 255), mixR, mixG, mixB);
+            return Color.FromArgb(Math.Clamp(Convert.ToInt32(alpha * 255), 0, 255), mixR, mixG, mixB);
         }
 
         /// <summary>
@@ -185,11 +185,11 @@
                 throw new ArgumentException("Value must be between 0 and 1.", nameof(alpha));
             }
 
-            int r = System.Math.Clamp((int)(firstColor.R + secondColor.R * mixCoeff), 0, 255);
-            int g = System.Math.Clamp((int)(firstColor.G + secondColor.G * mixCoeff), 0, 255);
-            int b = System.Math.Clamp((int)(firstColor.B + secondColor.B * mixCoeff), 0, 255);
+            int r = Math.Clamp((int)(firstColor.R + secondColor.R * mixCoeff), 0, 255);
+            int g = Math.Clamp((int)(firstColor.G + secondColor.G * mixCoeff), 0, 255);
+            int b = Math.Clamp((int)(firstColor.B + secondColor.B * mixCoeff), 0, 255);
 
-            return Color.FromArgb(System.Math.Clamp(Convert.ToInt32(alpha * 255), 0, 255), r, g, b);
+            return Color.FromArgb(Math.Clamp(Convert.ToInt32(alpha * 255), 0, 255), r, g, b);
         }
 
         /// <summary>
@@ -206,10 +206,10 @@
             {
                 throw new ArgumentOutOfRangeException(nameof(alpha), "Value must be between 0 and 1.");
             }
-            int red = System.Math.Clamp(mainColor.R - subtractableColor.R, 0, 255);
-            int green = System.Math.Clamp(mainColor.G - subtractableColor.G, 0, 255);
-            int blue = System.Math.Clamp(mainColor.B - subtractableColor.B, 0, 255);
-            return Color.FromArgb(System.Math.Clamp(Convert.ToInt32(alpha * 255), 0, 255), red, green, blue);
+            int red = Math.Clamp(mainColor.R - subtractableColor.R, 0, 255);
+            int green = Math.Clamp(mainColor.G - subtractableColor.G, 0, 255);
+            int blue = Math.Clamp(mainColor.B - subtractableColor.B, 0, 255);
+            return Color.FromArgb(Math.Clamp(Convert.ToInt32(alpha * 255), 0, 255), red, green, blue);
         }
     }
 }

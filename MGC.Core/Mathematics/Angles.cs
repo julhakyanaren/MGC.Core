@@ -1,4 +1,4 @@
-﻿namespace MGC.Math
+﻿namespace MGC.Mathematics
 {
     /// <summary>
     /// Helper methods for working with angles:
@@ -12,11 +12,11 @@
         /// <summary>
         /// Conversion factor from degrees to radians: π / 180.
         /// </summary>
-        public const double Deg2Rad = System.Math.PI / 180.0;
+        public const double Deg2Rad = Math.PI / 180.0;
         /// <summary>
         /// Conversion factor from radians to degrees: 180 / π.
         /// </summary>
-        public const double Rad2Deg = 180.0 / System.Math.PI;
+        public const double Rad2Deg = 180.0 / Math.PI;
 
         /// <summary>
         /// Converts an angle from degrees to radians.
@@ -72,10 +72,10 @@
         /// </returns>
         public static double WrapRad(double angle)
         {
-            angle %= System.Math.Tau;
+            angle %= Math.Tau;
             if (angle < 0.0)
             {
-                angle += System.Math.Tau;
+                angle += Math.Tau;
             }
             return angle;
         }
@@ -121,9 +121,9 @@
         public static double WrapRadSigned(double angle)
         {
             double wrapped = WrapRad(angle);
-            if (wrapped > System.Math.PI)
+            if (wrapped > Math.PI)
             {
-                wrapped -= System.Math.Tau;
+                wrapped -= Math.Tau;
             }
             return wrapped;
         }
@@ -232,12 +232,12 @@
         {
             double delta = DeltaAngleDeg(current, target);
 
-            if (maxDelta <= 0.0 || System.Math.Abs(delta) <= maxDelta)
+            if (maxDelta <= 0.0 || Math.Abs(delta) <= maxDelta)
             {
                 return WrapDeg(target);
             }
 
-            double step = System.Math.Clamp(delta, -maxDelta, maxDelta);
+            double step = Math.Clamp(delta, -maxDelta, maxDelta);
             double result = current + step;
             return WrapDeg(result);
         }
@@ -264,12 +264,12 @@
         {
             double delta = DeltaAngleRad(current, target);
 
-            if (maxDelta <= 0.0 || System.Math.Abs(delta) <= maxDelta)
+            if (maxDelta <= 0.0 || Math.Abs(delta) <= maxDelta)
             {
                 return WrapRad(target);
             }
 
-            double step = System.Math.Clamp(delta, -maxDelta, maxDelta);
+            double step = Math.Clamp(delta, -maxDelta, maxDelta);
             double result = current + step;
             return WrapRad(result);
         }
@@ -350,7 +350,7 @@
         public static bool ApproximatelyEqualDeg(double a, double b, double toleranceDeg = 0.0001)
         {
             double delta = DeltaAngleDeg(a, b);
-            return System.Math.Abs(delta) <= toleranceDeg;
+            return Math.Abs(delta) <= toleranceDeg;
         }
         /// <summary>
         /// Determines whether two angles in radians are approximately equal,
@@ -369,7 +369,7 @@
         public static bool ApproximatelyEqualRad(double a, double b, double toleranceRad = 1e-6)
         {
             double delta = DeltaAngleRad(a, b);
-            return System.Math.Abs(delta) <= toleranceRad;
+            return Math.Abs(delta) <= toleranceRad;
         }
     }
 }
